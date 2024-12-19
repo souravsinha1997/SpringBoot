@@ -6,7 +6,15 @@ This repo is used for spring boot project
 private int id;
 
 
+Custom query:
+first one returns value, not ideal for all situation
+second one suggested
+
 	@Modifying
 	@Query(value="SELECT * FROM users u WHERE u.email=email",
 			nativeQuery=true)
 	List<Users> findByEmail(@Param("email") String email);
+
+			-----------OR----------
+
+	Optional<Users> findByEmail(@Param("email") String email);
