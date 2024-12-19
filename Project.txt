@@ -1,1 +1,6 @@
 This repo is used for spring boot project
+
+@Id
+@SequenceGenerator(name = "some_seq", sequenceName = "seq_name_in_db")
+@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "some_seq")
+private int id;
